@@ -26,7 +26,7 @@ export default function Loading() {
 
     // Navigate to next page after animation completes
     setTimeout(() => {
-      router.push('/abcd');
+      router.push('/gone');
     }, 5000);
   }, [router]);
 
