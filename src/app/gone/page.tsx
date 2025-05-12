@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import BlobCursor from './BlobCursor'
+import { SoundIcon } from "./SoundIcon";
+import FullScreenToggle from "./FullScreen";
 export default function ParallaxBackdrop() {
   const [scrollY, setScrollY] = useState(0);
   const [maxScroll, setMaxScroll] = useState(1);
@@ -79,7 +81,15 @@ export default function ParallaxBackdrop() {
       }}
     >
       <BlobCursor />
+      <div className="fixed right-6 bottom-6">
+      <SoundIcon muted={false} />
+
+      </div>
       {/* Overlay Text */}
+      <div className="fixed right-6 top-6">
+      <FullScreenToggle/>
+
+      </div>
       <div className="fixed top-1/7   left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none text-center">
         <h1 className="text-4xl font-bold text-white drop-shadow-lg">
           Story Time
