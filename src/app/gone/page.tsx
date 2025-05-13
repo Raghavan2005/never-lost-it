@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import BlobCursor from './BlobCursor'
 import { SoundIcon } from "./SoundIcon";
 import FullScreenToggle from "./FullScreen";
+import NeonCardGrid from "./NeonCardGrid";
 export default function ParallaxBackdrop() {
   const [scrollY, setScrollY] = useState(0);
   const [maxScroll, setMaxScroll] = useState(1);
@@ -17,6 +18,38 @@ export default function ParallaxBackdrop() {
     "Earth tried to shine",
     "But still missed the Sun",
   ];
+
+//grid
+ const cards = [
+    { title: 'Card 1', color: 'from-purple-500 to-pink-500' },
+    { title: 'Card 2', color: 'from-cyan-500 to-blue-500' },
+    { title: 'Card 3', color: 'from-green-500 to-emerald-500' },
+    { title: 'Card 4', color: 'from-orange-500 to-red-500' }
+  ];
+  
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+    
+    // Add animation keyframes for floating effect
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+
+
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -80,7 +113,8 @@ export default function ParallaxBackdrop() {
         backgroundSize: "1000px 1000px",
       }}
     >
-      <BlobCursor />
+     
+      {/* <BlobCursor />*/}
       <div className="fixed right-6 bottom-6">
       <SoundIcon muted={false} />
 
@@ -105,9 +139,14 @@ export default function ParallaxBackdrop() {
           Scroll slow to explore the split
         </p>
       </div>
+       <div className="fixed top-20 w-full right-0 left-0 bottom-0 pointer-events-none text-center z-20">
+        <NeonCardGrid/>
+        
+      </div>
+
 
       {/* Sticky Image Container */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-0 h-screen w-full overflow-hidden pointer-events-none">
         <div className="relative h-full w-full flex justify-center items-center">
           {/* Left Image */}
           <div
@@ -120,7 +159,7 @@ export default function ParallaxBackdrop() {
             <img
               src="/images/sun.png"
               alt="Sun"
-              className="w-100 h-100 object-cover"
+              className="w-100 h-100 object-cover pointer-events-none"
             />
           </div>
 
