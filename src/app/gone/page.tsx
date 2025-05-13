@@ -139,14 +139,14 @@ export default function ParallaxBackdrop() {
           Scroll slow to explore the split
         </p>
       </div>
-       <div className="fixed top-20 w-full right-0 left-0 bottom-0 pointer-events-none text-center z-20">
+       <div className="fixed top-20 w-full right-0 left-0 bottom-0 text-center z-20">
         <NeonCardGrid/>
         
       </div>
 
 
       {/* Sticky Image Container */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden pointer-events-none">
+      <div className="sticky top-0 h-screen w-full overflow-hidden ">
         <div className="relative h-full w-full flex justify-center items-center">
           {/* Left Image */}
           <div

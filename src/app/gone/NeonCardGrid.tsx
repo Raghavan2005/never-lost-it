@@ -33,7 +33,7 @@ export default function NeonCardGrid() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center  p-20">
+    <div className="min-h-screen flex items-center justify-center  p-10">
       <div 
         className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2  gap-6 w-full  transition-all duration-1000 ease-in-out ${
           loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -57,7 +57,7 @@ function Card({ title, color, delay }) {
   
   return (
     <div
-      className="relative group"
+      className="relative group w-140 mx-auto"
       style={{ 
         animation: 'float 6s ease-in-out infinite',
         animationDelay: `${delay}s`
