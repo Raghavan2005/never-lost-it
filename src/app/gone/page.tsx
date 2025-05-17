@@ -4,6 +4,7 @@ import BlobCursor from './BlobCursor'
 import { SoundIcon } from "./SoundIcon";
 import FullScreenToggle from "./FullScreen";
 import NeonCardGrid from "./NeonCardGrid";
+import AutoPlayAudio from "./AutoPlayAudio";
 export default function ParallaxBackdrop() {
   const [scrollY, setScrollY] = useState(0);
   const [maxScroll, setMaxScroll] = useState(1);
@@ -117,7 +118,6 @@ export default function ParallaxBackdrop() {
       {/* <BlobCursor />*/}
       <div className="fixed right-6 bottom-6">
       <SoundIcon muted={false} />
-
       </div>
       {/* Overlay Text */}
       <div className="fixed right-6 top-6">
@@ -141,7 +141,7 @@ export default function ParallaxBackdrop() {
       </div>
        <div className="fixed top-20 w-full right-0 left-0 bottom-0 text-center z-20">
         <NeonCardGrid/>
-        
+      
       </div>
 
 
