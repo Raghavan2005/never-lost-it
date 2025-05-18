@@ -5,6 +5,7 @@ import { SoundIcon } from "./SoundIcon";
 import FullScreenToggle from "./FullScreen";
 import NeonCardGrid from "./NeonCardGrid";
 import AutoPlayAudio from "./AutoPlayAudio";
+import NightSky from "./Back";
 export default function ParallaxBackdrop() {
   const [scrollY, setScrollY] = useState(0);
   const [maxScroll, setMaxScroll] = useState(1);
@@ -102,19 +103,13 @@ export default function ParallaxBackdrop() {
   }, [progress]);
 
   return (
-    <div
-      className="relative min-h-screen w-full text-white scroll-smooth"
-      style={{
-        background: "radial-gradient(circle at top, #0f0f2f 0%, #000 100%)",
-        backgroundImage:
-          "radial-gradient(2px 2px at 20% 30%, white 0%, transparent 100%)," +
-          "radial-gradient(1.5px 1.5px at 70% 40%, white 0%, transparent 100%)," +
-          "radial-gradient(1.2px 1.2px at 50% 80%, white 0%, transparent 100%)",
-        backgroundRepeat: "repeat",
-        backgroundSize: "1000px 1000px",
-      }}
-    >
-     
+      <div
+        className="relative min-h-screen w-full text-white scroll-smooth"
+      
+      >
+      <div className="absolute inset-0 z-0 h-full ">
+        <NightSky />
+      </div>
       {/* <BlobCursor />*/}
       <div className="fixed right-6 bottom-6">
       <SoundIcon muted={false} />
@@ -181,7 +176,7 @@ export default function ParallaxBackdrop() {
       </div>
 
       {/* Scrollable Content Placeholder */}
-      <div className="bg-gradient-to-b from-transparent via-gray-900 to-black h-[4000px]"></div>
+      
     </div>
   );
 }
