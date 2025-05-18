@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 export default function NeonCardGrid() {
   const cards = [
-    { title: 'Card 1', color: 'from-purple-500 to-pink-500' },
+    { title: 'carnatic music', color: 'from-purple-500 to-pink-500' },
     { title: 'Card 2', color: 'from-cyan-500 to-blue-500' },
     { title: 'Card 3', color: 'from-green-500 to-emerald-500' },
     { title: 'Card 4', color: 'from-orange-500 to-red-500' },
